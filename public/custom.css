@@ -8,3 +8,20 @@
 /* * {
   outline: lime solid 1px;
 } */
+
+.chart-bar {
+  background: var(--primary);
+  border-radius: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.chart-bar-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+article > .chart-bar-container {
+  height: 12rem;
+}

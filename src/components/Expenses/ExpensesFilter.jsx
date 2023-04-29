@@ -7,17 +7,18 @@ const ExpensesFilter = ({ onYearPick }) => {
   };
 
   return (
-      <article>
-        <label htmlFor="filter">
-          Filter by year
-          <select id="filter" onChange={handleChange}>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-          </select>
-        </label>
-      </article>
+    <article>
+      <label htmlFor="filter">
+        Filter by year
+        <select id="filter" onChange={handleChange}>
+          <option value="All">All years</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+        </select>
+      </label>
+    </article>
   );
 };
 

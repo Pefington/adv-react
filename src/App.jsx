@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Chart from './components/Chart/Chart';
 import Expenses from './components/Expenses/Expenses';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
 import NewExpense from './components/Expenses/NewExpense';
@@ -43,15 +44,18 @@ const App = () => {
   };
 
   const handleYearPick = (year) => {
+    if (year === 'All') return setExpenses(expensesData);
+
     const filteredExpenses = expensesData.filter(
       (expense) => expense.date.getFullYear() === +year
     );
-    setExpenses(filteredExpenses);
+    return setExpenses(filteredExpenses);
   };
 
   return (
     <>
       <NewExpense onExpenseSubmit={handleExpenseSubmit} />
+      <Chart expenses={expenses} />
       <ExpensesFilter onYearPick={handleYearPick} />
       {expenses.length === 0 && <p>No expenses found.</p>}
       <Expenses expenses={expenses} />
